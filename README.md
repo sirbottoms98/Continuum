@@ -1,25 +1,73 @@
+# Continuum
 
-Installation information
-=======
+Continuum is a configurable worldgen gatekeeper for Minecraft. Its first goal
+is to preserve Minecraft's original generation while blocking disallowed
+mod-added ore generation in the permanent Overworld. Allowed generators should
+keep their original behavior.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+> NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## Current status
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+The project is at the repository-foundation stage, targeting **Minecraft 1.21.1,
+NeoForge, and Java 21**. Ore enforcement and the other features described here
+are planned, not implemented. Support for other Minecraft versions comes later.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+The [roadmap](docs/ROADMAP.md) records progress and test results. CP-000
+(Repository Foundation) remains **IN PROGRESS** pending final repository checks
+and review.
+CP-001 (Minimal Mod Launch) is **PASS**, with maintainer-approved closure.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+The minimal mod foundation builds and launches to Minecraft's main menu. See
+[CP-001's results](docs/checkpoints/CP-001-minimal-mod-launch.md#completion-evidence)
+for the verified build and launch checks.
+
+## Ore control comes first
+
+The [planned ore-generation policy](docs/ORE_GENERATION_POLICY.md) covers
+default-deny rules, configuration exceptions, generator discovery, and initial
+test cases. It also explains what still needs design and verification.
+
+## Later work
+
+Structures and other worldgen categories come after ore enforcement. Frontier
+routing and custom geological generation are deferred; Overworld ore blocking
+must work without them.
+
+Frontier is a planned, configurable dimension for renewable exploration and
+resource gathering. Later generation options could include original mod
+generation, conventional clusters, and geological deposits where supported.
+Geology would connect deposits to rock formations, depth, and other conditions.
+Shared minerals and overlapping generators would need coordination to avoid
+unintended duplicates. Mineral processing and resource extraction are
+longer-term possibilities.
+
+World-integrity work would help players understand changes to mods or
+generation settings that could affect existing worlds. Detection, safeguards,
+and Frontier renewal still need their own design and testing.
+
+## Working together
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and the relevant checkpoint before
+proposing work. Bug reports, design discussions, documentation feedback, and
+feature suggestions are welcome.
+
+SirBottoms leads development and reviews contributions. The project uses AI
+assistance, including ChatGPT and Codex, under the
+[contribution and disclosure policy](CONTRIBUTING.md#reviews-and-ai-assistance).
+Codex materially assisted with this documentation revision.
+
+## License
+
+Continuum's original code is licensed under **LGPL-3.0-only**: the GNU Lesser
+General Public License, version 3 only. [LICENSE](LICENSE) contains the complete,
+unchanged [LGPLv3 text](https://www.gnu.org/licenses/lgpl-3.0.txt) and the
+[GPLv3 terms](https://www.gnu.org/licenses/gpl-3.0.txt) it incorporates.
+
+The NeoForge starter template keeps its existing MIT attribution in
+[TEMPLATE_LICENSE.txt](TEMPLATE_LICENSE.txt). Minecraft, NeoForge, and other
+mods keep their own licenses and terms. Their code and assets are not covered
+by Continuum's license.
+
+See the official [Minecraft Usage Guidelines](https://www.minecraft.net/en-us/usage-guidelines)
+for rules about Minecraft names, branding, and assets.
