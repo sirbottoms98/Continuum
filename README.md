@@ -22,29 +22,11 @@ The minimal mod foundation builds and launches to Minecraft's main menu. See
 [CP-001's results](docs/checkpoints/CP-001-minimal-mod-launch.md#completion-evidence)
 for the verified build and launch checks.
 
-## Ore control comes first
+## Architecture and development direction
 
-The [planned ore-generation policy](docs/ORE_GENERATION_POLICY.md) covers
-default-deny rules, configuration exceptions, generator discovery, and initial
-test cases. It also explains what still needs design and verification.
+The [accepted geological architecture](docs/architecture/ADR-001-GEOLOGICAL-INFRASTRUCTURE.md) defines a permanent Overworld with vanilla and approved resource exceptions, and an expandable Frontier for industrial resources. Continuum will own natural geological resources independently of technology mods.
 
-## Later work
-
-Structures and other worldgen categories come after ore enforcement. Frontier
-routing and custom geological generation are deferred; Overworld ore blocking
-must work without them.
-
-Frontier is a planned, configurable dimension for renewable exploration and
-resource gathering. Later generation options could include original mod
-generation, conventional clusters, and geological deposits where supported.
-Geology would connect deposits to rock formations, depth, and other conditions.
-Shared minerals and overlapping generators would need coordination to avoid
-unintended duplicates. Mineral processing and resource extraction are
-longer-term possibilities.
-
-World-integrity work would help players understand changes to mods or
-generation settings that could affect existing worlds. Detection, safeguards,
-and Frontier renewal still need their own design and testing.
+The [ore-generation policy](docs/ORE_GENERATION_POLICY.md) describes the planned isolation rules. These capabilities are not yet verified on this branch.
 
 ## Working together
 
