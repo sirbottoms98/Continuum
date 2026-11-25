@@ -31,15 +31,18 @@ checkpoint contract.
 
 ## Development order
 
-After the foundation and minimal-launch checkpoints, the first functional goal
-is reliable Overworld ore enforcement. See the
-[ore-generation policy](ORE_GENERATION_POLICY.md) for rules and design limits.
-Create zinc is an initial test case; Mekanism or Oritech are candidates for
-testing the same core policy.
+Follow [ADR-001](architecture/ADR-001-GEOLOGICAL-INFRASTRUCTURE.md) and the
+[ore-generation policy](ORE_GENERATION_POLICY.md). The accepted development
+order is:
 
-Structures and other worldgen categories come afterward. Frontier routing,
-Continuum-owned deposits, geology, and world-integrity systems are deferred.
-These provisional topics are **NOT STARTED**. They have no assigned checkpoint
-IDs or approved implementation contracts yet.
+1. Complete existing foundation and zinc/tin baseline validation.
+2. Audit B05 industrial generators and approved resource exceptions.
+3. Establish Frontier and dimension-specific resource isolation.
+4. Validate permanent Overworld readiness and obtain pregeneration approval.
+5. Expand Frontier regional geology, solid resources and fluid reservoirs.
+6. Develop Axiom integration as needed.
 
-Next, finish CP-000's remaining repository checks and maintainer closure review.
+These are architectural priorities, not newly opened checkpoints. Assign
+checkpoint IDs and approve implementation contracts separately. Existing
+remote checkpoint status is unchanged; reconcile local checkpoint work before
+updating this tracker.
