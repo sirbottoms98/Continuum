@@ -16,6 +16,7 @@ Before starting a task, read the relevant files:
 - `docs/ROADMAP.md` — Checkpoint progress.
 - `docs/checkpoints/` — Scope and acceptance criteria.
 - `docs/ORE_GENERATION_POLICY.md` — Generation policy design.
+- `docs/architecture/ADR-001-GEOLOGICAL-INFRASTRUCTURE.md` — Accepted geological architecture.
 
 If documentation conflicts, identify the disagreement and ask for clarification rather than silently choosing an interpretation.
 
